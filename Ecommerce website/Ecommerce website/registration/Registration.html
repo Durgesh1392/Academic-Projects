@@ -1,0 +1,105 @@
+
+<html>
+<head>  
+
+<script>
+	
+function myfunc() 
+	{
+    
+		var x = document.forms["myForm"]["email"].value;
+    
+		if (x == null || x == "") 
+		{
+        
+			alert("Email should not be empty");
+        
+			return false;
+    
+		}
+    
+		var y = document.forms["myForm"]["pass"].value;
+    
+		if (y == null || y == "") 
+		{
+        
+			alert("Password should not be empty");
+        
+			return false;
+    
+		}
+    
+		var z = document.forms["myForm"]["confirmpass"].value;
+    
+		if (z == null || z == "") 
+		{
+        
+			alert("Password confirmation should not be empty");
+        
+			return false;
+    
+		}
+    
+		if(y!=z)
+    
+		{
+        
+			alert('Password does not match');
+    
+		}
+    
+		var w = document.forms["myForm"]["captext"].value;
+    
+		if(w!='9R8Kmc')
+    
+		{
+        
+			alert('Captcha does not match');
+    
+		}
+               
+		if (document.forms["myForm"]["check1"].checked) 
+		{
+		} 
+		else 
+		{
+            
+			alert("You didn't check it! Let me check it for you.");
+        
+		}
+
+	}
+
+</script>
+
+<title>Registration</title>  
+       
+</head>  
+<body style="background-color:#408080;">	
+ 
+<form style="background-color:#408080;" name="myForm" class="container" action="http://localhost/ecommerce/registration/regindex.php" method="post" >
+	<h1 style="color:white"><U>Register</U></h1><br> 	  
+	<ul>  
+	<input type="email" name="email" placeholder="Email" style="width:300px; height:35px;margin-top:15px;margin-left:50px;"/><br>
+		
+	<input type="password" name="pass" placeholder="Password" style="width:300px; height:35px;margin-top:15px;margin-left:50px;"/><br>
+		
+	<input type="password" name="confirmpass" placeholder="Confirm Password" style="width:300px; height:35px; margin-top:15px; margin-left:50px;"/><br><br>
+		
+			<img src="../images/captcha.gif" style="margin-left:50px;"/>  <br>
+			<input type="text" placeholder="Type Captcha here" style="width:150px; height:35px; margin-top:10px; margin-left:100px;  " name="captext"></input><br>
+		<tbody>
+			<tr>
+				<td>
+					<input type="checkbox" style="margin-left:50px;margin-top:25px;" name="check1"></input>
+				</td>
+				<td>
+					<p style="color:white; margin-left:80px;margin-top:-16px;">I agree to the terms and Conditions.</p><br>
+				</td>
+			</tr>
+		</tbody>
+	<button type="submit" style="margin-left:100px;" name="submit" value="submit" onclick="myfunc()">REGISTER</button>
+	<button type="reset"> RESET</button>      
+</form>  
+</body>  
+</html>  
